@@ -1,0 +1,9 @@
+.navSection{
+    @apply flex flex-col gap-8 items-center justify-center bg-[#323334] p-20
+}
+.navSection nav{
+    @apply flex justify-between items-center w-10/12
+}
+.navCategory{
+    @apply flex flex-row gap-4
+}

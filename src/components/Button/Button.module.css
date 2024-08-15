@@ -1,0 +1,3 @@
+.btnRed{
+    @apply px-4 py-1 text-white font-medium bg-red-400 rounded-md
+}
