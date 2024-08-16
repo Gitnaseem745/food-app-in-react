@@ -6,14 +6,14 @@ const Navbar = () => {
   return (
     <section className={styles.navSection}>
         <nav>
-            <img src="src\assets\Food Hub.svg" />
-            <input type="text" placeholder='Search' />
+            <img src="src\assets\FoodHub.svg" />
+            <input type="text" placeholder='Search Food...' />
         </nav>
         <div className={styles.navCategory}>
             <Button  btnText="All" />
-            <Button btnText="All" />
-            <Button btnText="All" />
-            <Button btnText="All" />
+            <Button btnText="Breakfast" />
+            <Button btnText="Lunch" />
+            <Button btnText="Dinner" />
         </div>
     </section>
   )
