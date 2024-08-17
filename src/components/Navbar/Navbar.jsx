@@ -2,25 +2,26 @@ import React from 'react'
 import Button from '../Button/Button'
 import styles from './Navbar.module.css'
 import Card from '../Card/Card'
+import { foodOne } from '../../assets'
 
 const foodCard = [
     {
         name: 'Spaghetti Carbonara',
-        img: 'src\assets\food_1.png',
+        img: `${foodOne}`,
         des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: `$20.00`,
+        price: '$20.00',
     },
     {
         name: 'Spaghetti Carbonara',
-        img: 'src\assets\food_1.png',
+        img: `${foodOne}`,
         des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: `$20.00`,
+        price: '$20.00',
     },
     {
         name: 'Spaghetti Carbonara',
-        img: 'src\assets\food_1.png',
+        img: `${foodOne}`,
         des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: `$20.00`,
+        price: '$20.00',
     },
 ]
 
@@ -37,10 +38,10 @@ const Navbar = () => {
             <Button btnText="Lunch" />
             <Button btnText="Dinner" />
         </div>
-        <div className="foodcar">
-        {foodCard.map((food) => {
-        <Card cardImg={food.img} cardTitle={food.name} cardText={food.des} cardPrice={food.price}/>
-    })}
+        <div className="w-full flex h-screen flex-row gap-4 justify-center items-center">
+        {foodCard.map( (food, index) => (
+        <Card cardImg={food.img} key={index} cardTitle={food.name} cardText={food.des} cardPrice={food.price}/>
+    ))}
         </div>
     </section>
   )
