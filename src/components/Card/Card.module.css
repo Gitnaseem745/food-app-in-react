@@ -1,5 +1,5 @@
 .mainCard{
-    @apply px-6 py-4 bg-gradient-to-r from-gray-400 to-gray-500 p-1 rounded-lg flex flex-row gap-4 max-w-[340px] max-h-fit items-center
+    @apply px-6 py-4 bg-gradient-to-r from-gray-400 to-gray-500 p-1 rounded-lg flex flex-row gap-4 max-w-[380px] max-h-fit items-center
 }
 .cardImg{
     @apply max-w-[133px] max-h-[133px] rounded-full

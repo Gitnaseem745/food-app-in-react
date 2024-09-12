@@ -7,3 +7,11 @@
     padding: 0%;
     box-sizing: border-box;
 }
+html,body{
+    background-color: #323334;
+}
+@layer base {
+    .foodPage{
+        @apply w-full flex h-screen flex-row flex-wrap gap-4 justify-center items-center
+    }
+}

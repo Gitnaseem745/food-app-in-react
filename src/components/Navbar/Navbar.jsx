@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Button from '../Button/Button'
 import styles from './Navbar.module.css'
-import Card from '../Card/Card'
-import { foodOne } from '../../assets'
+import FoodPage from '../FoodCardPage/FoodPage';
+import { categories, foodCard } from '../../foodContent';
 
 const Navbar = () => {
-    const [filteredData, setFilteredData] = useState([]);
+    const [filteredData, setFilteredData] = useState(foodCard);
     const onChangeFilter = (e) => {
         let searchValue = e.target.value;
-        console.log(searchValue);
         if(searchValue===""){
-            setFilteredData(null);
+            setFilteredData(foodCard);
         }
         const filtered = foodCard.filter((food) => food.name.toLowerCase().includes(searchValue.toLowerCase()));
         setFilteredData(filtered);
@@ -23,57 +22,12 @@ const Navbar = () => {
             <input type="text" onChange={onChangeFilter} placeholder='Search Food...' />
         </nav>
         <div className={styles.navCategory}>
-            <Button  btnText="All" />
-            <Button btnText="Breakfast" />
-            <Button btnText="Lunch" />
-            <Button btnText="Dinner" />
+        {categories.map((category, index)=>(
+            <Button btnText={category} key={index} />
+        ))}
         </div>
-        <div className="w-full flex h-screen flex-row flex-wrap gap-4 justify-center items-center">
-        {filteredData.map( (food, index) => (
-        <Card cardImg={food.img} key={food.name} cardTitle={food.name} cardText={food.des} cardPrice={food.price}/>
-    ))}
-        </div>
+        <FoodPage data={filteredData} />
     </section>
   )
 }
-
-const foodCard = [
-    {
-        name: 'Spaghetti Carbonara',
-        img: `${foodOne}`,
-        des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: '$20.00',
-    },
-    {
-        name: 'Spaghetti Carbonara',
-        img: `${foodOne}`,
-        des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: '$20.00',
-    },
-    {
-        name: 'Spaghetti Carbonara',
-        img: `${foodOne}`,
-        des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: '$20.00',
-    },
-    {
-        name: 'Spaghetti Carbonara',
-        img: `${foodOne}`,
-        des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: '$20.00',
-    },
-    {
-        name: 'Spaghetti Carbonara',
-        img: `${foodOne}`,
-        des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: '$20.00',
-    },
-    {
-        name: 'Spaghetti Carbonara',
-        img: `${foodOne}`,
-        des: "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper. It's creamy, savory, and perfectly seasoned.",
-        price: '$20.00',
-    },
-]
-
 export default Navbar
