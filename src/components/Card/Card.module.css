@@ -1,15 +1,21 @@
 .mainCard{
-    @apply px-6 py-4 bg-gradient-to-r from-gray-400 to-gray-500 p-1 rounded-lg flex flex-row gap-4 max-w-[380px] max-h-fit items-center
+    @apply max-w-[380px] h-[200px] px-6 py-4 bg-gradient-to-r from-gray-400 to-gray-500 p-1 rounded-lg flex flex-row gap-4 items-center
+}
+.cardImgDiv{
+    @apply w-[40%]
 }
 .cardImg{
-    @apply max-w-[133px] max-h-[133px] rounded-full
+    @apply w-[120px] h-[120px] bg-cover rounded-full
 }
 .cardContent{
-    @apply flex flex-col justify-start items-start gap-4
+    @apply flex flex-col justify-start items-start gap-4 w-[60%] max-sm:gap-2
 }
 .cardContent Button{
     @apply self-end
 }
 .mainCard h2{
-    @apply text-xl font-bold
+    @apply text-[19px] font-bold
+}
+.mainCard p{
+    @apply text-xs
 }

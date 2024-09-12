@@ -5,8 +5,8 @@ import Button from '../Button/Button'
 const Card = ({cardImg, cardTitle, cardText, cardPrice}) => {
   return (
     <div className={styles.mainCard}>
-        <div className={styles.cardImg}>
-            <img src={cardImg} className='w-full h-full' />
+        <div className={styles.cardImgDiv}>
+            <img src={cardImg} className={styles.cardImg} />
         </div>
         <div className={styles.cardContent}>
             <h2>{cardTitle}</h2>

@@ -10,8 +10,12 @@
 html,body{
     background-color: #323334;
 }
+*::selection{
+    color: #fff;
+    background-color: #323334;
+}
 @layer base {
     .foodPage{
-        @apply w-full flex h-screen flex-row flex-wrap gap-4 justify-center items-center
+        @apply w-full flex h-screen flex-row flex-wrap gap-4 justify-center items-start
     }
 }
