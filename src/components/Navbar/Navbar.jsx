@@ -3,6 +3,7 @@ import Button from '../Button/Button'
 import styles from './Navbar.module.css'
 import FoodPage from '../FoodCardPage/FoodPage';
 import { categories, foodCard } from '../../foodContent';
+import { siteLogo } from '../../assets';
 
 const Navbar = () => {
     const [filteredData, setFilteredData] = useState(foodCard);
@@ -25,7 +26,7 @@ const Navbar = () => {
   return (
     <section className={styles.navSection}>
         <nav>
-            <img src="src\assets\FoodHub.svg" />
+            <img src={siteLogo} />
             <input type="text" onChange={onChangeFilter} placeholder='Search Food...' />
         </nav>
         <div className={styles.navCategory}>

@@ -13,7 +13,9 @@ import food12 from './food_12.jpg';
 import food13 from './food_13.jpg';
 import food14 from './food_14.jpg';
 import food15 from './food_15.jpg';
+import logo from './FoodHub.svg';
 
+export const siteLogo = logo;
 export const foodOne = food1;
 export const foodTwo = food2;
 export const foodThree = food3;
