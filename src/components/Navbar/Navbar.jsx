@@ -14,6 +14,13 @@ const Navbar = () => {
         const filtered = foodCard.filter((food) => food.name.toLowerCase().includes(searchValue.toLowerCase()));
         setFilteredData(filtered);
     }
+    const onClickChangeCategory = () =>{
+        if(btnText===""){
+            setFilteredData(foodCard);
+        }
+        const filtered = foodCard.filter((food)=> food.name.toLowerCase().includes(btnText));
+        setFilteredData(filtered);
+    }
 
   return (
     <section className={styles.navSection}>
@@ -23,7 +30,7 @@ const Navbar = () => {
         </nav>
         <div className={styles.navCategory}>
         {categories.map((category, index)=>(
-            <Button btnText={category} key={index} />
+            <Button btnText={category} key={index} onClick={onClickChangeCategory} />
         ))}
         </div>
         <FoodPage data={filteredData} />
