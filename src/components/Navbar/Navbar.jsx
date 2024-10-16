@@ -7,31 +7,25 @@ import { siteLogo } from '../../assets';
 
 const Navbar = () => {
     const [filteredData, setFilteredData] = useState(foodCard);
-    const onChangeFilter = (e) => {
-        let searchValue = e.target.value;
-        if(searchValue===""){
-            setFilteredData(foodCard);
-        }
-        const filtered = foodCard.filter((food) => food.name.toLowerCase().includes(searchValue.toLowerCase()));
-        setFilteredData(filtered);
+    const onChangeFilterFood = (e) => {
+        let searchedFood = e.target.value;
+        const filteredFood = foodCard.filter((food) => food.name.toLowerCase().includes(searchedFood.toLowerCase()));
+        { searchedFood==="" ? setFilteredData(foodCard) : setFilteredData(filteredFood) }
     }
-    const onClickChangeCategory = () =>{
-        if(btnText===""){
-            setFilteredData(foodCard);
-        }
-        const filtered = foodCard.filter((food)=> food.name.toLowerCase().includes(btnText));
-        setFilteredData(filtered);
+    const onClickFilterFoodByMenu = (e) => {
+        const currMenu = e.target.innerHTML;
+        const filteredFood = foodCard.filter((food) => food.type.toLowerCase().includes(currMenu.toLowerCase()));
+        { currMenu.toLowerCase()==="all" ? setFilteredData(foodCard) : setFilteredData(filteredFood) }
     }
-
   return (
     <section className={styles.navSection}>
         <nav>
             <img src={siteLogo} />
-            <input type="text" onChange={onChangeFilter} placeholder='Search Food...' />
+            <input type="text" onChange={onChangeFilterFood} placeholder='Search Food...' />
         </nav>
         <div className={styles.navCategory}>
         {categories.map((category, index)=>(
-            <Button btnText={category} key={index} onClick={onClickChangeCategory} />
+            <Button btnText={category} key={index} changeMenu={onClickFilterFoodByMenu} />
         ))}
         </div>
         <FoodPage data={filteredData} />

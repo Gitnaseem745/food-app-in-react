@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from './Button.module.css'
 
-const Button = ({btnText, ...res}) => {
+const Button = ({btnText, changeMenu}) => {
   return (
-    <button className={styles.btnRed} {...res}>{btnText}</button>
+    <button className={styles.btnRed} onClick={changeMenu}>{btnText}</button>
   )
 }
 

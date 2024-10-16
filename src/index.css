@@ -16,6 +16,6 @@ html,body{
 }
 @layer base {
     .foodPage{
-        @apply w-full flex h-screen flex-row flex-wrap gap-4 justify-center items-start
+        @apply w-full flex max-h-screen flex-row flex-wrap gap-4 justify-center items-start
     }
 }
