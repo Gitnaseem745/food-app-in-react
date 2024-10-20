@@ -7,6 +7,7 @@ import { siteLogo } from '../../assets';
 
 const Navbar = () => {
     const [filteredData, setFilteredData] = useState(foodCard);
+    const [selectedMenu, setSelectedMenu] = useState("");
     const onChangeFilterFood = (e) => {
         let searchedFood = e.target.value;
         const filteredFood = foodCard.filter((food) => food.name.toLowerCase().includes(searchedFood.toLowerCase()));
@@ -14,6 +15,7 @@ const Navbar = () => {
     }
     const onClickFilterFoodByMenu = (e) => {
         const currMenu = e.target.innerHTML;
+        setSelectedMenu(currMenu);
         const filteredFood = foodCard.filter((food) => food.type.toLowerCase().includes(currMenu.toLowerCase()));
         { currMenu.toLowerCase()==="all" ? setFilteredData(foodCard) : setFilteredData(filteredFood) }
     }
@@ -26,7 +28,7 @@ const Navbar = () => {
         </nav>
         <div className={styles.navCategory}>
         {categories.map((category, index)=>(
-            <Button btnText={category} key={index} changeMenu={onClickFilterFoodByMenu} />
+            <Button selectedMenu={selectedMenu}btnText={category} key={index} changeMenu={onClickFilterFoodByMenu} />
         ))}
         </div>
         <FoodPage data={filteredData} />

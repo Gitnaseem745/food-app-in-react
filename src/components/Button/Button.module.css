@@ -1,4 +1,6 @@
-.btnRed{
-    @apply px-5 py-1 font-medium text-white bg-[#2A6E4F] rounded-md text-[16px] hover:bg-[#2A6E4F]
+.nonSelectedMenu{
+    @apply px-5 py-1 font-semibold text-black bg-transparent rounded-[20px] text-[16px] hover:bg-[#2A6E4F] w-[120px] h-[67px] border-[2px] hover:text-white
 }
-/* bg-[#D3D5DA] */
+.selectedMenu{
+    @apply px-5 py-1 font-semibold text-white bg-[#2A6E4F] rounded-[20px] text-[16px] w-[120px] h-[67px]
+}
