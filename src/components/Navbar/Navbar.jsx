@@ -19,6 +19,10 @@ const Navbar = () => {
         const filteredFood = foodCard.filter((food) => food.type.toLowerCase().includes(currMenu.toLowerCase()));
         { currMenu.toLowerCase()==="all" ? setFilteredData(foodCard) : setFilteredData(filteredFood) }
     }
+    const sortByRate = () => {
+        const filteredFood = foodCard.sort();
+        setFilteredData(filteredFood);
+    }
   return (
     <section className={styles.navSection}>
         <nav>
@@ -31,6 +35,7 @@ const Navbar = () => {
             <Button selectedMenu={selectedMenu}btnText={category} key={index} changeMenu={onClickFilterFoodByMenu} />
         ))}
         </div>
+        {/* <button onClick={sortByRate}>Sort</button> */}
         <FoodPage data={filteredData} />
     </section>
   )
