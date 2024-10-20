@@ -1,3 +1,4 @@
 .btnRed{
-    @apply px-5 py-1 text-white font-medium bg-[#FF4343] rounded-md text-[16px] hover:bg-red-600
+    @apply px-5 py-1 font-medium text-white bg-[#2A6E4F] rounded-md text-[16px] hover:bg-[#2A6E4F]
 }
+/* bg-[#D3D5DA] */

@@ -20,7 +20,8 @@ const Navbar = () => {
   return (
     <section className={styles.navSection}>
         <nav>
-            <img src={siteLogo} />
+            {/* <img src={siteLogo} /> */}
+            <h2 className='text-black text-3xl font-bold'>Foodie</h2>
             <input type="text" onChange={onChangeFilterFood} placeholder='Search Food...' />
         </nav>
         <div className={styles.navCategory}>

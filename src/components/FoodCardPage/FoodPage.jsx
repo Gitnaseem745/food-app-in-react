@@ -1,9 +1,9 @@
-import Card from '../Card/Card.jsx';
+import FoodCard from '../FoodCard/FoodCard.jsx'
 const FoodPage = ({data}) => {
   return (
     <div className="foodPage">
-    {data.map( (food) => (
-    <Card cardImg={food.img} key={food.name} cardTitle={food.name} cardText={food.des} cardPrice={food.price}/>
+    {data.map( (food, i) => (
+    <FoodCard key={i} foodImg={food.img} foodName={food.name} foodType={food.type} foodPrice={food.price}/>
 ))}
     </div>
   )
